@@ -2,26 +2,94 @@
   margin-top: 50px;
   width: 100%;
 }
+.my-image {
+  position: relative;
+}
+.my-image::after {
+  content: "";
+}
 .my-image img {
   border-radius: 50%;
   width: 300px;
   height: 300px;
 }
-@media (min-width: 1200px) {
+.my-image h2 {
+  color: #fa8072;
+}
+.self-introduction h1,
+.self-introduction h3 {
+  margin: 5px 0;
+}
+.self-introduction h1 {
+  font-size: 2.125rem;
+  position: relative;
+}
+.self-introduction h1::before {
+  content: "はせがわ";
+  text-align: center;
+  width: 50%;
+  font-size: 0.75rem;
+  position: absolute;
+  top: -10px;
+  left: 0;
+}
+.self-introduction h1::after {
+  content: "あきと";
+  text-align: center;
+  width: 50%;
+  font-size: 0.75rem;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+}
+.self-introduction p {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+.self-introduction span:first-child {
+  color: #fa8072;
+}
+.self-introduction span:last-child {
+  color: #00ced1;
+}
+@media (min-width: 1080px) {
   .introduction-content {
     display: flex;
     justify-content: center;
   }
   .my-image {
-    padding-right: 150px;
+    padding-right: 100px;
     width: 50%;
     display: flex;
-    justify-content: right;
+    flex-flow: column;
+    align-items: flex-end;
   }
   .self-introduction {
     padding-left: 50px;
     width: 50%;
     display: flex;
-    justify-content: left;
+    flex-flow: column;
+    align-items: flex-start;
+  }
+  .self-introduction p {
+    max-width: 500px;
+  }
+}
+@media (max-width: 1080px) {
+  .introduction-content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .my-image,
+  .self-introduction {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .self-introduction p {
+    text-align: center;
+    max-width: 360px;
   }
 }
