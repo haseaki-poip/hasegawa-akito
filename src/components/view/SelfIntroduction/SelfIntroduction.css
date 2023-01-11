@@ -1,5 +1,6 @@
 .introduction-content {
   margin-top: 50px;
+  margin-bottom: 100px;
   width: 100%;
 }
 .my-image a,
@@ -145,12 +146,8 @@
     -ms-transform: translateX(-50%);
     width: 100vw;
     height: 100vw;
-    max-width: 400px;
-    max-height: 400px;
-    width: 100vw;
-    height: 100vw;
-    max-width: 400px;
-    max-height: 400px;
+    max-width: 330px;
+    max-height: 330px;
   }
 }
 
