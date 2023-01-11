@@ -1,0 +1,27 @@
+.introduction-content {
+  margin-top: 50px;
+  width: 100%;
+}
+.my-image img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+@media (min-width: 1200px) {
+  .introduction-content {
+    display: flex;
+    justify-content: center;
+  }
+  .my-image {
+    padding-right: 150px;
+    width: 50%;
+    display: flex;
+    justify-content: right;
+  }
+  .self-introduction {
+    padding-left: 50px;
+    width: 50%;
+    display: flex;
+    justify-content: left;
+  }
+}
