@@ -1,0 +1,11 @@
+.headline {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.headline h1 {
+  padding: 0 10px;
+  margin: 0 auto;
+  border-bottom: 3px #00ced1 solid;
+  width: fit-content;
+}
