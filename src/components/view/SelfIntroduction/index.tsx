@@ -9,8 +9,10 @@ const SelfIntroduction = () => {
       <div className="introduction-content">
         <div className="my-image">
           <div className="flex-column-center">
-            <img src={myImage} alt="myImage" />
-            <h2>Engineer</h2>
+            <a className="hover-target" href="https://github.com/haseaki-poip">
+              <img src={myImage} alt="myImage" />
+            </a>
+            <h2 className="rotate-target">Engineer</h2>
           </div>
         </div>
         <div className="self-introduction">

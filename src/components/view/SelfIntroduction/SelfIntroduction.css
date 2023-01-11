@@ -2,19 +2,40 @@
   margin-top: 50px;
   width: 100%;
 }
-.my-image {
-  position: relative;
-}
-.my-image::after {
-  content: "";
-}
+.my-image a,
 .my-image img {
   border-radius: 50%;
   width: 300px;
   height: 300px;
 }
+.my-image a {
+  position: relative;
+}
+.my-image a::after {
+  content: "";
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #00ced1;
+  opacity: 0.2;
+  position: absolute;
+  top: 15%;
+  right: 30%;
+  z-index: -1;
+}
 .my-image h2 {
   color: #fa8072;
+}
+.self-introduction {
+  position: relative;
+}
+.self-introduction::after {
+  content: "";
+  border-radius: 50%;
+  background-color: #fa8072;
+  opacity: 0.2;
+  position: absolute;
+  z-index: -1;
 }
 .self-introduction h1,
 .self-introduction h3 {
@@ -36,11 +57,11 @@
 .self-introduction h1::after {
   content: "あきと";
   text-align: center;
-  width: 50%;
+  width: 30%;
   font-size: 0.75rem;
   position: absolute;
   top: -10px;
-  left: 50%;
+  left: 65%;
 }
 .self-introduction p {
   font-size: 1.125rem;
@@ -52,13 +73,16 @@
 .self-introduction span:last-child {
   color: #00ced1;
 }
+
+/* レイアウトをレスポンシブにする */
 @media (min-width: 1080px) {
   .introduction-content {
+    margin-top: 100px;
     display: flex;
     justify-content: center;
   }
   .my-image {
-    padding-right: 100px;
+    padding-right: 150px;
     width: 50%;
     display: flex;
     flex-flow: column;
@@ -83,6 +107,7 @@
   }
   .my-image,
   .self-introduction {
+    margin-top: 50px;
     width: 100%;
     display: flex;
     flex-flow: column;
@@ -91,5 +116,64 @@
   .self-introduction p {
     text-align: center;
     max-width: 360px;
+  }
+}
+
+/* 丸のオブジェクトの位置を幅によって変える */
+@media (min-width: 1080px) {
+  .self-introduction::after {
+    top: -100px;
+    right: 40px;
+    width: 400px;
+    height: 400px;
+  }
+}
+@media (max-width: 1080px) and (min-width: 800px) {
+  .self-introduction::after {
+    top: -30%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+  }
+}
+@media (max-width: 800px) {
+  .self-introduction::after {
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    width: 100vw;
+    height: 100vw;
+    max-width: 400px;
+    max-height: 400px;
+    width: 100vw;
+    height: 100vw;
+    max-width: 400px;
+    max-height: 400px;
+  }
+}
+
+.hover-target:hover + .rotate-target {
+  animation-name: small-rotate-animation;
+  animation-duration: 0.2s;
+  animation-timing-function: linear; /* 一定のスピード */
+  animation-iteration-count: infinite; /* 無限に繰り返す */
+}
+@keyframes small-rotate-animation {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0);
   }
 }
