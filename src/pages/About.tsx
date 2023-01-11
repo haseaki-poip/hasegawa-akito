@@ -1,5 +1,11 @@
+import SelfIntroduction from "src/components/view/SelfIntroduction";
+
 const About = () => {
-  return <div></div>;
+  return (
+    <div>
+      <SelfIntroduction />
+    </div>
+  );
 };
 
 export default About;
