@@ -9,6 +9,7 @@ const Hobby = () => {
     <div id="hobby">
       <Headline headlineName="hobby" />
       <div className="hobby-gallery">
+        <span>{"<"}</span>
         <div className="hobby-img first-left-img">
           <img src={leftImage} alt="hobbyImage" />
         </div>
@@ -18,6 +19,7 @@ const Hobby = () => {
         <div className="hobby-img first-right-img">
           <img src={rightImage} alt="hobbyImage" />
         </div>
+        <span>{">"}</span>
       </div>
     </div>
   );
