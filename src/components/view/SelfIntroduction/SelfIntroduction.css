@@ -76,7 +76,7 @@
 }
 
 /* レイアウトをレスポンシブにする */
-@media (min-width: 1080px) {
+@media (min-width: 1020px) {
   .introduction-content {
     margin-top: 100px;
     display: flex;
@@ -100,7 +100,7 @@
     max-width: 500px;
   }
 }
-@media (max-width: 1080px) {
+@media (max-width: 1020px) {
   .introduction-content {
     display: flex;
     flex-flow: column;
@@ -121,7 +121,7 @@
 }
 
 /* 丸のオブジェクトの位置を幅によって変える */
-@media (min-width: 1080px) {
+@media (min-width: 1020px) {
   .self-introduction::after {
     top: -100px;
     right: 40px;
@@ -129,7 +129,7 @@
     height: 400px;
   }
 }
-@media (max-width: 1080px) and (min-width: 800px) {
+@media (max-width: 1020px) and (min-width: 767px) {
   .self-introduction::after {
     top: -30%;
     left: 50%;
@@ -137,7 +137,7 @@
     height: 400px;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 767px) {
   .self-introduction::after {
     top: -10%;
     left: 50%;
