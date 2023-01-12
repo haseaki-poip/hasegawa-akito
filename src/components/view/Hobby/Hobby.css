@@ -3,6 +3,7 @@
   overflow-x: hidden;
   position: relative;
 }
+/* 動くobject */
 .background-object {
   width: 100%;
   height: 100%;
@@ -57,11 +58,13 @@
     right: -100px;
   }
 }
+
+/* 写真スライド */
 .hobby-gallery {
   margin-top: 100px;
   width: 100%;
-  height: 46vw; /* 画像のscale(1.1)したサイズ */
-  max-height: 440px; /* 画像の最大height */
+  height: 47vw; /* 画像のheight + 1vw */
+  max-height: 450px; /* 画像の最大height + 10px */
   display: flex;
   justify-content: center;
   position: relative;
@@ -149,4 +152,30 @@
   height: 100%;
   border-radius: 20px;
   object-fit: cover; /* 画像が歪むことなくwidthとheightのサイズにトリミング*/
+}
+
+/* 趣味の紹介文章 */
+.hobby-introduction {
+  margin-top: 20px;
+  width: 100%;
+  height: 90vw;
+  max-height: 400px;
+}
+.hobby-sentence {
+  margin: 0 auto;
+  width: 90vw;
+  height: 90vw;
+  max-width: 350px;
+  max-height: 350px;
+  border-radius: 50%;
+  background-color: #00ced17b;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+}
+.hobby-sentence p {
+  width: 200px;
+  text-align: center;
 }

@@ -25,6 +25,14 @@ const Hobby = () => {
         </div>
         <span>{">"}</span>
       </div>
+      <div className="hobby-introduction">
+        <div className="hobby-sentence">
+          <h2>snow board</h2>
+          <p>
+            自分で車を出してスノボーしに行きます！写真はカッコつけていますがこのあと着地で転びます
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
