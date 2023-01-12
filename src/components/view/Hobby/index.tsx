@@ -8,6 +8,10 @@ const Hobby = () => {
   return (
     <div id="hobby">
       <Headline headlineName="hobby" />
+      <div className="background-object">
+        <div className="object" id="object1"></div>
+        <div className="object" id="object2"></div>
+      </div>
       <div className="hobby-gallery">
         <span>{"<"}</span>
         <div className="hobby-img first-left-img">
