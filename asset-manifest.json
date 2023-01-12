@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/hasegawa-akito/static/css/main.2d976794.css",
+    "main.js": "/hasegawa-akito/static/js/main.548b2366.js",
+    "static/media/hackathon.png": "/hasegawa-akito/static/media/hackathon.085b04d972bb34a66d72.png",
+    "static/media/snowboard.png": "/hasegawa-akito/static/media/snowboard.3a7f2bc37e32712afb19.png",
+    "static/media/car.png": "/hasegawa-akito/static/media/car.06e5e56865157b33f98f.png",
+    "static/media/hasegawa.png": "/hasegawa-akito/static/media/hasegawa.0640f71f6a53351b5130.png",
+    "index.html": "/hasegawa-akito/index.html",
+    "main.2d976794.css.map": "/hasegawa-akito/static/css/main.2d976794.css.map",
+    "main.548b2366.js.map": "/hasegawa-akito/static/js/main.548b2366.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d976794.css",
+    "static/js/main.548b2366.js"
+  ]
+}
