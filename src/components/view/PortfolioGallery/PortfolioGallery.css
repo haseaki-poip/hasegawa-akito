@@ -1,0 +1,30 @@
+.portfolio-content {
+  margin-top: 50px;
+  width: 100%;
+  height: 4000px;
+  position: relative;
+  perspective: 3000px;
+}
+.portfolio {
+  width: 100%;
+  height: calc(100vh - 350px);
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.portfolio {
+  flex-flow: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.portfolio img {
+  width: 95vw;
+  height: calc(11.8 * 95vw / 21.6);
+  max-width: 800px;
+  max-height: 430px;
+  object-fit: cover; /* 画像が歪むことなくwidthとheightのサイズにトリミング*/
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
+}
