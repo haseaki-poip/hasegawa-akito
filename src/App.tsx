@@ -9,8 +9,11 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<About />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path={`${process.env.PUBLIC_URL}/`} element={<About />} />
+          <Route
+            path={`${process.env.PUBLIC_URL}/portfolio`}
+            element={<Portfolio />}
+          />
         </Routes>
       </BrowserRouter>
 
