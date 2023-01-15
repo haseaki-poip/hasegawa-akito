@@ -9,8 +9,8 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path={`${process.env.PUBLIC_URL}/`} element={<Portfolio />} />
-          <Route path={"/hasegawa-akito/portfolio/"} element={<Portfolio />} />
+          <Route path="/" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
       </BrowserRouter>
 
