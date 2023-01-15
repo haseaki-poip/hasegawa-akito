@@ -69,51 +69,47 @@
   justify-content: center;
   position: relative;
 }
-.hobby-gallery span {
-  font-size: 3rem;
-  color: #c0c0c0;
-  font-weight: bold;
-  width: 100px;
-  height: 100px;
+.arrow {
   display: flex;
+  fill: white;
+  opacity: 0.5;
   justify-content: center;
   align-items: center;
   position: absolute;
   cursor: pointer;
   transition: all 0.2s;
-  animation-name: change-color-animation;
-  animation-duration: 1.5s;
-  animation-timing-function: linear; /* 一定のスピード */
-  animation-iteration-count: infinite; /* 無限に繰り返す */
 }
-@keyframes change-color-animation {
-  0% {
-    color: #d3d3d3;
-  }
-  50% {
-    color: #fff;
-  }
-  100% {
-    color: #d3d3d3;
+@media (min-width: 640px) {
+  .arrow {
+    width: 60px;
+    height: 60px;
   }
 }
-.hobby-gallery span:first-child {
+@media (max-width: 640px) {
+  .arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
+.hobby-gallery .arrow:first-child {
   top: 50%;
   left: 50%;
   z-index: 50;
   transform: translate(calc(-50% - 35vw), -50%) scale(1);
 }
-.hobby-gallery span:last-child {
+.hobby-gallery .arrow:last-child {
   top: 50%;
   right: 50%;
   z-index: 50;
   transform: translate(calc(50% + 35vw), -50%) scale(1);
 }
-.hobby-gallery span:hover {
-  font-size: 4rem;
+.hobby-gallery .arrow:first-child:hover {
+  opacity: 0.7;
+  transform: translate(calc(-50% - 35vw), -50%) scale(1.2);
 }
-.hobby-gallery span:active {
-  font-size: 3rem;
+.hobby-gallery .arrow:last-child:hover {
+  opacity: 0.7;
+  transform: translate(calc(50% + 35vw), -50%) scale(1.2);
 }
 .hobby-img {
   width: 70vw;
