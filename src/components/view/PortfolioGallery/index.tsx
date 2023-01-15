@@ -38,6 +38,7 @@ const PortfolioGallery = () => {
   })();
 
   const selectPortfolioNumber = (scrollPosition: number) => {
+    if (scrollPosition < 0) return 0;
     return Math.floor(scrollPosition / span); // 切り捨て
   };
 
