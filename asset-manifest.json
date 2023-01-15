@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/hasegawa-akito/static/css/main.35c4ad21.css",
-    "main.js": "/hasegawa-akito/static/js/main.a1bfc7cf.js",
+    "main.js": "/hasegawa-akito/static/js/main.5dedc3d9.js",
     "static/media/E-SInt.png": "/hasegawa-akito/static/media/E-SInt.990b675361b24f82332a.png",
     "static/media/votiong-site.png": "/hasegawa-akito/static/media/votiong-site.d14dcc82e53c1468922d.png",
     "static/media/Dealer.png": "/hasegawa-akito/static/media/Dealer.306e9d91090b2d2c6e93.png",
     "index.html": "/hasegawa-akito/index.html",
     "main.35c4ad21.css.map": "/hasegawa-akito/static/css/main.35c4ad21.css.map",
-    "main.a1bfc7cf.js.map": "/hasegawa-akito/static/js/main.a1bfc7cf.js.map"
+    "main.5dedc3d9.js.map": "/hasegawa-akito/static/js/main.5dedc3d9.js.map"
   },
   "entrypoints": [
     "static/css/main.35c4ad21.css",
-    "static/js/main.a1bfc7cf.js"
+    "static/js/main.5dedc3d9.js"
   ]
 }
