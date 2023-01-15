@@ -7,7 +7,7 @@ const Header = ({ pageName }: { pageName: "about" | "portfolio" }) => {
           style={
             pageName === "about" ? { color: "white" } : { color: "#d3d3d3" }
           }
-          href="/"
+          href={`${process.env.PUBLIC_URL}/`}
         >
           about
         </a>
@@ -15,7 +15,7 @@ const Header = ({ pageName }: { pageName: "about" | "portfolio" }) => {
           style={
             pageName === "portfolio" ? { color: "white" } : { color: "#d3d3d3" }
           }
-          href="/portfolio"
+          href="/hasegawa-akito/portfolio"
         >
           portfolio
         </a>
