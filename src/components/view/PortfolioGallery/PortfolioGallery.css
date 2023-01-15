@@ -1,0 +1,78 @@
+.portfolio-content {
+  width: 100%;
+  position: relative;
+}
+.portfolio-fade-content {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+@media (min-width: 1280px) {
+  .portfolio-fade-content {
+    padding-top: 10vh;
+  }
+}
+@media (min-width: 764px) and (max-width: 1280px) {
+  .portfolio-fade-content {
+    padding-top: 15vh;
+  }
+}
+@media (min-width: 640px) and (max-width: 764px) {
+  .portfolio-fade-content {
+    padding-top: 25vh;
+  }
+}
+@media (max-width: 640px) {
+  .portfolio-fade-content {
+    padding-top: 35vh;
+  }
+}
+
+.scroll-sign {
+  display: none;
+  position: fixed;
+  transform: translateX(-50%);
+  animation-duration: 1.4s;
+  animation-timing-function: linear; /* 一定のスピード */
+  animation-iteration-count: infinite; /* 無限に繰り返す */
+}
+.scroll-up-sign {
+  display: block;
+  top: 60%;
+  left: 50%;
+  animation-name: scroll-up-animation;
+}
+.scroll-down-sign {
+  display: block;
+  top: 40%;
+  left: 50%;
+  animation-name: scroll-down-animation;
+}
+.scroll-sign svg {
+  z-index: 1;
+  width: 128px;
+  height: 128px;
+  fill: gray;
+}
+@keyframes scroll-up-animation {
+  from {
+    top: 60%;
+    opacity: 0;
+  }
+  to {
+    top: 40%;
+    opacity: 0.6;
+  }
+}
+@keyframes scroll-down-animation {
+  from {
+    top: 20%;
+    opacity: 0;
+  }
+  to {
+    top: 40%;
+    opacity: 0.6;
+  }
+}
