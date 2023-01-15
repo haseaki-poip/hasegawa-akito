@@ -4,14 +4,17 @@ import useScroll from "src/components/hooks/useScroll";
 
 const PortfolioGallery = () => {
   const scrollPosition = useScroll();
-  const transformStyle = (() => {
-    if (scrollPosition <= 3200) {
+  const portfolioStyle = (() => {
+    const scroll_in_span = scrollPosition % 1000;
+    if (scroll_in_span <= 300) {
+      const opacity = 1 - (300 - scroll_in_span) / 300;
       return {
-        transform: `translateY(${scrollPosition}px)`,
+        opacity: `${opacity}`,
       };
-    } else {
+    } else if (scroll_in_span >= 700) {
+      const opacity = 1 - (scroll_in_span - 700) / 300;
       return {
-        transform: "translateY($3200px)",
+        opacity: `${opacity}`,
       };
     }
   })();
@@ -19,7 +22,7 @@ const PortfolioGallery = () => {
   console.log(scrollPosition);
   return (
     <div className="portfolio-content">
-      <div className="portfolio" style={transformStyle}>
+      <div className="portfolio" style={portfolioStyle}>
         <img src={portfolioImg} alt="portfolioImage" />
         <div className="portfolio-introduction">
           <h2>E-SInt</h2>

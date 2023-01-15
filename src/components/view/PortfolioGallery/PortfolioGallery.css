@@ -1,16 +1,14 @@
 .portfolio-content {
   margin-top: 50px;
   width: 100%;
-  height: 4000px;
-  position: relative;
-  perspective: 3000px;
+  height: 3800px;
 }
 .portfolio {
   width: 100%;
-  height: calc(100vh - 350px);
+  height: calc(100vh - 25%);
   display: flex;
   position: fixed;
-  top: 0;
+  top: 25%;
   left: 0;
 }
 
