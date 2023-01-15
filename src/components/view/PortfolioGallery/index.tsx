@@ -8,13 +8,17 @@ const PortfolioGallery = () => {
     const scroll_in_span = scrollPosition % 1000;
     if (scroll_in_span <= 300) {
       const opacity = 1 - (300 - scroll_in_span) / 300;
+      const translateY = (300 - scroll_in_span) / 3;
       return {
         opacity: `${opacity}`,
+        transform: `translateY(${translateY}px)`,
       };
     } else if (scroll_in_span >= 700) {
       const opacity = 1 - (scroll_in_span - 700) / 300;
+      const translateY = (scroll_in_span - 700) / 3;
       return {
         opacity: `${opacity}`,
+        transform: `translateY(${translateY}px)`,
       };
     }
   })();
