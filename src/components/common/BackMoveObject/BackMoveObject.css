@@ -1,0 +1,95 @@
+.bg {
+  z-index: -1;
+}
+
+.object {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: fixed;
+  animation-duration: 20s;
+  animation-timing-function: linear; /* 一定のスピード */
+  animation-iteration-count: infinite; /* 無限に繰り返す */
+}
+.bg .object:first-child {
+  top: 10%;
+  left: 0;
+  background-color: #fa8072;
+  opacity: 0.2;
+  animation-name: move-downward-animation;
+}
+.bg .object:nth-child(2) {
+  top: 45%;
+  left: 45%;
+  background-color: #00ced1;
+  opacity: 0.2;
+  animation-name: move-lateral-animation;
+}
+.bg .object:last-child {
+  top: 80%;
+  left: 95%;
+  background-color: #fa8072;
+  opacity: 0.2;
+  animation-name: move-upward-animation;
+}
+@keyframes move-downward-animation {
+  0% {
+    top: 10%;
+    left: 0;
+  }
+  25% {
+    top: 80%;
+    left: 45%;
+  }
+  50% {
+    top: 10%;
+    left: 95%;
+  }
+  75% {
+    top: 80%;
+    left: 35%;
+  }
+  100% {
+    top: 10%;
+    left: 0;
+  }
+}
+@keyframes move-lateral-animation {
+  0% {
+    left: 45%;
+  }
+  25% {
+    left: 95%;
+  }
+  50% {
+    left: 45%;
+  }
+  75% {
+    left: 0;
+  }
+  100% {
+    left: 45%;
+  }
+}
+@keyframes move-upward-animation {
+  0% {
+    top: 80%;
+    left: 95%;
+  }
+  25% {
+    top: 10%;
+    left: 35%;
+  }
+  50% {
+    top: 80%;
+    left: 0;
+  }
+  75% {
+    top: 10%;
+    left: 45%;
+  }
+  100% {
+    top: 80%;
+    left: 95%;
+  }
+}

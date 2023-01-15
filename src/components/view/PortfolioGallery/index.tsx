@@ -2,18 +2,19 @@ import "./PortfolioGallery.css";
 import useScroll from "src/components/hooks/useScroll";
 import PortfolioContent from "./PortfolioContent";
 import PortfolioDatas from "src/feature/portfolioData";
+import BackMoveObject from "src/components/common/BackMoveObject";
 
 const span = 1000; // ポートフォリオひとつにつきスパンは1000px
 const fadeInStart = span * 0.3;
 const fadeOutStart = span - fadeInStart;
-const maxScroll = PortfolioDatas.length * span;
+const maxScroll = PortfolioDatas.length * span - 10;
 
 const PortfolioGallery = () => {
   const scrollPosition = useScroll();
 
   // ポートフォリオの数に応じてcontentの高さが変わる
   const portfolioContentStyle = {
-    height: `calc(${maxScroll}px + 75vh)`,
+    height: `calc(${maxScroll}px + 90vh)`,
   };
 
   const portfolioFadeStyle = (() => {
@@ -40,15 +41,17 @@ const PortfolioGallery = () => {
     return Math.floor(scrollPosition / span); // 切り捨て
   };
 
-  console.log(scrollPosition);
-
   return (
     <div className="portfolio-content" style={portfolioContentStyle}>
       {scrollPosition <= maxScroll ? (
-        <div className="portfolio-fade-content" style={portfolioFadeStyle}>
-          <PortfolioContent
-            portfolioNumber={selectPortfolioNumber(scrollPosition)}
-          />
+        <div>
+          <BackMoveObject />
+
+          <div className="portfolio-fade-content" style={portfolioFadeStyle}>
+            <PortfolioContent
+              portfolioNumber={selectPortfolioNumber(scrollPosition)}
+            />
+          </div>
         </div>
       ) : null}
     </div>
