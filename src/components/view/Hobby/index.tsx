@@ -7,9 +7,9 @@ import { useState } from "react";
 
 const Hobby = () => {
   const [nowSlideClassList, setNowSlideClassList] = useState([
-    "center-img",
-    "right-img",
-    "left-img",
+    "left",
+    "center",
+    "right",
   ]);
   const leftSlide = () => {
     const endNowItem = nowSlideClassList[2];
@@ -48,13 +48,13 @@ const Hobby = () => {
             </g>
           </svg>
         </div>
-        <div className={"hobby-img " + nowSlideClassList[0]}>
+        <div className={"hobby-img " + nowSlideClassList[0] + "-img"}>
           <img src={leftImage} alt="hobbyImage" />
         </div>
-        <div className={"hobby-img " + nowSlideClassList[1]}>
+        <div className={"hobby-img " + nowSlideClassList[1] + "-img"}>
           <img src={centerImage} alt="hobbyImage" />
         </div>
-        <div className={"hobby-img " + nowSlideClassList[2]}>
+        <div className={"hobby-img " + nowSlideClassList[2] + "-img"}>
           <img src={rightImage} alt="hobbyImage" />
         </div>
         <div className="arrow" onClick={() => rightSlide()}>
@@ -74,10 +74,31 @@ const Hobby = () => {
         </div>
       </div>
       <div className="hobby-introduction">
-        <div className="hobby-sentence">
+        <div
+          className="hobby-sentence"
+          style={{ opacity: nowSlideClassList[0] === "center" ? "1" : "0" }}
+        >
+          <h2>drive</h2>
+          <p>
+            私の愛車のMR-Sです!二人乗りのオープンカーで、人馬一体のような感覚でドライブを楽しめます。
+          </p>
+        </div>
+        <div
+          className="hobby-sentence"
+          style={{ opacity: nowSlideClassList[1] === "center" ? "1" : "0" }}
+        >
           <h2>snow board</h2>
           <p>
-            自分で車を出してスノボーしに行きます！写真はカッコつけていますがこのあと着地で転びます
+            自分で車を出してスノボーしに行きます！写真はカッコつけていますがこのあと着地で転びます。
+          </p>
+        </div>
+        <div
+          className="hobby-sentence"
+          style={{ opacity: nowSlideClassList[2] === "center" ? "1" : "0" }}
+        >
+          <h2>hackathon</h2>
+          <p>
+            JPHACKSに出場し、決勝16チームに選出されました!素晴らしいチームがたくさんあり勉強になりました。
           </p>
         </div>
       </div>

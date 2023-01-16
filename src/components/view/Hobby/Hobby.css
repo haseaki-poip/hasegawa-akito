@@ -155,9 +155,15 @@
   width: 100%;
   height: 90vw;
   max-height: 400px;
+  position: relative;
+  perspective: 1000px;
 }
 .hobby-sentence {
-  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateZ(0deg);
+  transform-style: preserve-3d;
   width: 90vw;
   height: 90vw;
   max-width: 350px;
@@ -169,6 +175,7 @@
   justify-content: center;
   align-items: center;
   color: gray;
+  opacity: 0;
 }
 .hobby-sentence p {
   width: 200px;
