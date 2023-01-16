@@ -3,8 +3,28 @@ import "./Hobby.css";
 import leftImage from "src/assets/images/car.png";
 import centerImage from "src/assets/images/snowboard.png";
 import rightImage from "src/assets/images/hackathon.png";
+import { useState } from "react";
 
 const Hobby = () => {
+  const [nowSlideClassList, setNowSlideClassList] = useState([
+    "center-img",
+    "right-img",
+    "left-img",
+  ]);
+  const leftSlide = () => {
+    const endNowItem = nowSlideClassList[2];
+    const stateNowArray = nowSlideClassList.slice(0, -1);
+    stateNowArray.unshift(endNowItem);
+
+    setNowSlideClassList(stateNowArray);
+  };
+  const rightSlide = () => {
+    const headNowItem = nowSlideClassList[0];
+    const stateNowArray = nowSlideClassList.slice(1);
+    stateNowArray.push(headNowItem);
+
+    setNowSlideClassList(stateNowArray);
+  };
   return (
     <div id="hobby">
       <Headline headlineName="hobby" />
@@ -13,7 +33,7 @@ const Hobby = () => {
         <div className="object" id="object2"></div>
       </div>
       <div className="hobby-gallery">
-        <div className="arrow">
+        <div className="arrow" onClick={() => leftSlide()}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <g>
               <polygon points="277.919,132.921 154.839,256 277.919,379.072 318.552,338.438 236.122,256 318.552,173.562 	"></polygon>
@@ -28,16 +48,16 @@ const Hobby = () => {
             </g>
           </svg>
         </div>
-        <div className="hobby-img first-left-img">
+        <div className={"hobby-img " + nowSlideClassList[0]}>
           <img src={leftImage} alt="hobbyImage" />
         </div>
-        <div className="hobby-img first-center-img">
+        <div className={"hobby-img " + nowSlideClassList[1]}>
           <img src={centerImage} alt="hobbyImage" />
         </div>
-        <div className="hobby-img first-right-img">
+        <div className={"hobby-img " + nowSlideClassList[2]}>
           <img src={rightImage} alt="hobbyImage" />
         </div>
-        <div className="arrow">
+        <div className="arrow" onClick={() => rightSlide()}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <g>
               <polygon points="193.447,173.562 275.877,256 193.447,338.438 234.081,379.08 357.161,256 234.081,132.928 	"></polygon>

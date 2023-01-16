@@ -122,25 +122,25 @@
   top: 0%;
   left: 50%;
 }
-.first-left-img {
+.left-img {
   z-index: 10;
   transform: translateX(calc(-50% - 25vw)) scale(0.75); /* 真ん中より1/4画面分左 */
 }
-.first-center-img {
+.center-img {
   z-index: 30;
   transform: translateX(-50%) scale(1);
 }
-.first-right-img {
+.right-img {
   transform: translateX(calc(-50% + 25vw)) scale(0.75); /* 真ん中より1/4画面分右 */
   z-index: 10;
 }
-.first-left-img img {
+.left-img img {
   opacity: 0.6;
 }
-.first-center-img img {
+.center-img img {
   opacity: 1;
 }
-.first-right-img img {
+.right-img img {
   opacity: 0.6;
 }
 .hobby-img img {
@@ -149,7 +149,6 @@
   border-radius: 20px;
   object-fit: cover; /* 画像が歪むことなくwidthとheightのサイズにトリミング*/
 }
-
 /* 趣味の紹介文章 */
 .hobby-introduction {
   margin-top: 20px;
