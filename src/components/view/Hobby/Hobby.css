@@ -117,7 +117,20 @@
   position: relative;
   top: 0;
   left: 0;
+  animation-duration: 1s;
+  animation-timing-function: linear; /* 一定のスピード */
+  animation-fill-mode: forwards;
 }
+/* @keyframes slide-left-animation {
+  to {
+    transform: translateX(-62vw);
+  }
+}
+@keyframes slide-right-animation {
+  to {
+    transform: translateX(62vw);
+  }
+} */
 .hobby-img {
   width: 60vw;
   height: 40vw;
@@ -129,16 +142,13 @@
   left: 50%;
 }
 .left-img {
-  z-index: 10;
   transform: translateX(calc(-50% - 62vw)) scale(1); /* 真ん中より1/4画面分左 */
 }
 .center-img {
-  z-index: 30;
   transform: translateX(-50%) scale(1);
 }
 .right-img {
   transform: translateX(calc(-50% + 62vw)) scale(1); /* 真ん中より1/4画面分右 */
-  z-index: 10;
 }
 .hobby-img img {
   width: 100%;
