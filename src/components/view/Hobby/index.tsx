@@ -48,15 +48,18 @@ const Hobby = () => {
             </g>
           </svg>
         </div>
-        <div className={"hobby-img " + nowSlideClassList[0] + "-img"}>
-          <img src={leftImage} alt="hobbyImage" />
+        <div className="slide-area">
+          <div className={"hobby-img " + nowSlideClassList[0] + "-img"}>
+            <img src={leftImage} alt="hobbyImage" />
+          </div>
+          <div className={"hobby-img " + nowSlideClassList[1] + "-img"}>
+            <img src={centerImage} alt="hobbyImage" />
+          </div>
+          <div className={"hobby-img " + nowSlideClassList[2] + "-img"}>
+            <img src={rightImage} alt="hobbyImage" />
+          </div>
         </div>
-        <div className={"hobby-img " + nowSlideClassList[1] + "-img"}>
-          <img src={centerImage} alt="hobbyImage" />
-        </div>
-        <div className={"hobby-img " + nowSlideClassList[2] + "-img"}>
-          <img src={rightImage} alt="hobbyImage" />
-        </div>
+
         <div className="arrow" onClick={() => rightSlide()}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <g>
