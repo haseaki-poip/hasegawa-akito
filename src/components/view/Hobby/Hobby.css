@@ -117,20 +117,10 @@
   position: relative;
   top: 0;
   left: 0;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: linear; /* 一定のスピード */
   animation-fill-mode: forwards;
 }
-/* @keyframes slide-left-animation {
-  to {
-    transform: translateX(-62vw);
-  }
-}
-@keyframes slide-right-animation {
-  to {
-    transform: translateX(62vw);
-  }
-} */
 .hobby-img {
   width: 60vw;
   height: 40vw;
