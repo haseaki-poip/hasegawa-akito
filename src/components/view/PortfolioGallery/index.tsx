@@ -42,6 +42,7 @@ const PortfolioGallery = () => {
     return Math.floor(scrollPosition / span); // 切り捨て
   };
 
+  // スクロールサインを上向きか下向きか非表示かのcss classを割り当て
   const scrollSignClassName = (() => {
     if (scrollPosition === 0) return "scroll-up-sign";
     if (scrollPosition > maxScroll + 100) return "scroll-down-sign";
@@ -50,6 +51,12 @@ const PortfolioGallery = () => {
 
   return (
     <div className="portfolio-content" style={portfolioContentStyle}>
+      <div
+        className="overview"
+        style={{ display: scrollPosition === 0 ? "block" : "none" }}
+      >
+        <h2>私が開発したアプリケーションの紹介ページです。</h2>
+      </div>
       <div className={"scroll-sign " + scrollSignClassName}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <g>
