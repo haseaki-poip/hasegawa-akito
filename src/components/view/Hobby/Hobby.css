@@ -78,18 +78,8 @@
   position: absolute;
   cursor: pointer;
   transition: all 0.2s;
-}
-@media (min-width: 640px) {
-  .arrow {
-    width: 60px;
-    height: 60px;
-  }
-}
-@media (max-width: 640px) {
-  .arrow {
-    width: 40px;
-    height: 40px;
-  }
+  width: 80px;
+  height: 80px;
 }
 .hobby-gallery .arrow:first-child {
   top: 50%;

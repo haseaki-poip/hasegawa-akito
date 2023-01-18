@@ -1,5 +1,5 @@
 import Headline from "src/components/common/Headline";
-import myImage from "src/assets/images/hasegawa.png";
+import myImage from "src/assets/images/my-img.png";
 import "./SelfIntroduction.css";
 
 const SelfIntroduction = () => {
