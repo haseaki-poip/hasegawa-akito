@@ -3,6 +3,7 @@ import useScroll from "src/components/hooks/useScroll";
 import PortfolioContent from "./PortfolioContent";
 import PortfolioDatas from "src/feature/portfolioData";
 import BackMoveObject from "src/components/common/BackMoveObject";
+import PortfolioDetail from "./PortfolioDetail";
 
 const span = 1000; // ポートフォリオひとつにつきスパンは1000px
 const fadeInStart = span * 0.3;
@@ -72,6 +73,8 @@ const PortfolioGallery = () => {
 
       {scrollPosition <= maxScroll ? (
         <div>
+          <PortfolioDetail portfolioData={PortfolioDatas[0]} />
+
           <BackMoveObject />
 
           <div className="portfolio-fade-content" style={portfolioFadeStyle}>

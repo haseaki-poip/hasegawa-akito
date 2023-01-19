@@ -1,18 +1,28 @@
-.portfolio-detatil {
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
   width: 100%;
-  text-align: center;
-}
-.portfolio-detatil button {
-  padding: 15px 25px;
-  border: none;
-  border-radius: 5px;
-  color: white;
+  height: 100vh;
   background-color: gray;
   opacity: 0.6;
+  /* modalの背景をスクロールできなくする工夫 */
+  overscroll-behavior: contain;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  touch-action: none;
 }
-.portfolio-detatil button:hover {
-  opacity: 0.8;
+/* modalの背景をスクロールできなくする工夫 */
+.modal:before,
+.modal::after {
+  content: "";
+  width: 1px;
+  height: calc(100vh + 1px);
+  display: flex;
 }
-.portfolio-detatil button:active {
-  opacity: 0.6;
+.modal::-webkit-scrollbar {
+  display: none;
 }

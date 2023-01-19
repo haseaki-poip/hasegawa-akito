@@ -8,7 +8,7 @@ type Props = {
 const PortfolioDetail = ({ portfolioData }: Props) => {
   return (
     <div className="portfolio-detatil">
-      <button>詳細を見る</button>
+      <div className="modal"></div>
     </div>
   );
 };
