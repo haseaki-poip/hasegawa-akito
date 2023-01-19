@@ -36,7 +36,7 @@ const PortfolioDatas = [
     id: 2,
     portfolio_name: "voting-site",
     portfolio_introduction:
-      "アンケート作成とその結果をリアルタイムで反映できるwebアプリ",
+      "アンケート作成とその結果をリアルタイムで反映できるwebアプリです。",
     sub__introduction:
       "投票結果がリアルタイムで画面に反映されるため、投票状況を楽しむことができます。",
     portfolio_img: VotingSiteImg,
