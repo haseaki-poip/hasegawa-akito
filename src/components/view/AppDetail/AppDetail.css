@@ -1,0 +1,75 @@
+.close {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+}
+.close svg:hover {
+  cursor: pointer;
+  animation-name: rotate-animation;
+  animation-duration: 0.2s;
+  animation-timing-function: linear; /* 一定のスピード */
+}
+@keyframes rotate-animation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.detail-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app-introduction {
+  padding-right: 50px;
+  width: 50%;
+  display: flex;
+  justify-content: end;
+}
+.introduction-content {
+  width: 90%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.introduction-content * {
+  margin: 5px 0;
+}
+.introduction-content p span {
+  padding: 3px 10px;
+  border-radius: 30px;
+  margin-right: 5px;
+}
+#frontend span {
+  background-color: #fa80727b;
+}
+#backend span {
+  background-color: #00ced17b;
+}
+#other span {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.url a {
+  margin-right: 10px;
+}
+.url a:hover svg {
+  fill: black;
+}
+.app-img {
+  width: 50%;
+}
+.app-img img {
+  width: 95vw;
+  height: calc(11.8 * 95vw / 21.6);
+  max-width: 500px;
+  max-height: 273px;
+  object-fit: cover; /* 画像が歪むことなくwidthとheightのサイズにトリミング*/
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
