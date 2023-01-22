@@ -15,7 +15,7 @@ const PortfolioContent = memo<Props>(({ portfolioNumber }) => {
         <div className="portfolio-introduction">
           <h2>{portfolioData.portfolio_name}</h2>
           <p>{portfolioData.portfolio_introduction}</p>
-          <button>詳細を見る</button>
+          <button onClick={() => {}}>詳細を見る</button>
         </div>
       </div>
     </>

@@ -3,13 +3,13 @@ import useScroll from "src/components/hooks/useScroll";
 import PortfolioContent from "./PortfolioContent";
 import PortfolioDatas from "src/feature/portfolioData";
 import BackMoveObject from "src/components/common/BackMoveObject";
-import PortfolioDetail from "./PortfolioDetail";
 
-const span = 1000; // ポートフォリオひとつにつきスパンは1000px
-const fadeInStart = span * 0.3;
-const fadeOutStart = span - fadeInStart;
+const span = 1300; // ポートフォリオひとつにつきスパンは1000px
+const gap = 300; // 各ポートフォリオが出現するまでの間隔
+const fadeInFinish = (span - gap) * 0.2 + gap;
+const fadeOutStart = span - (span - gap) * 0.2;
 const maxScroll = PortfolioDatas.length * span - 10;
-
+// window.scrollTo(0, 1000); // スクロール量を指定できる
 const PortfolioGallery = () => {
   const scrollPosition = useScroll();
 
@@ -19,18 +19,31 @@ const PortfolioGallery = () => {
   };
 
   const portfolioFadeStyle = (() => {
-    const scroll_in_span = scrollPosition % span;
+    const scroll_in_span = (scrollPosition % span) - gap; // 各ポートフォリオにおけるスクロール量
 
-    if (scroll_in_span <= fadeInStart) {
-      const opacity = 1 - (fadeInStart - scroll_in_span) / fadeInStart;
-      const translateY = ((fadeInStart - scroll_in_span) / fadeInStart) * 200;
+    if (scroll_in_span < 0) {
+      return {
+        opacity: "0",
+        transform: "translateY(0px)",
+      };
+    }
+
+    if (scroll_in_span <= fadeInFinish - gap) {
+      const opacity =
+        1 - (fadeInFinish - gap - scroll_in_span) / (fadeInFinish - gap);
+      const translateY =
+        ((fadeInFinish - gap - scroll_in_span) / (fadeInFinish - gap)) * 200;
       return {
         opacity: `${opacity}`,
         transform: `translateY(${translateY}px)`,
       };
-    } else if (scroll_in_span >= fadeOutStart) {
-      const opacity = 1 - (scroll_in_span - fadeOutStart) / fadeInStart;
-      const translateY = ((scroll_in_span - fadeOutStart) / fadeInStart) * 200;
+    }
+
+    if (scroll_in_span >= fadeOutStart - gap) {
+      const opacity =
+        1 - (scroll_in_span + gap - fadeOutStart) / (fadeInFinish - gap);
+      const translateY =
+        ((scroll_in_span + gap - fadeOutStart) / (fadeInFinish - gap)) * 200;
       return {
         opacity: `${opacity}`,
         transform: `translateY(${translateY}px)`,
@@ -73,8 +86,6 @@ const PortfolioGallery = () => {
 
       {scrollPosition <= maxScroll ? (
         <div>
-          <PortfolioDetail portfolioData={PortfolioDatas[0]} />
-
           <BackMoveObject />
 
           <div className="portfolio-fade-content" style={portfolioFadeStyle}>
