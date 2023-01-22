@@ -19,28 +19,73 @@
   }
 }
 
-.detail-content {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (min-width: 1024px) {
+  .detail-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .app-introduction {
+    padding-right: 50px;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+  }
+  .introduction-content {
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .app-img {
+    width: 50%;
+  }
+  .app-img img {
+    width: 95vw;
+    height: calc(11.8 * 95vw / 21.6);
+    max-width: 500px;
+    max-height: 273px;
+    object-fit: cover; /* 画像が歪むことなくwidthとheightのサイズにトリミング*/
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
 }
-.app-introduction {
-  padding-right: 50px;
-  width: 50%;
-  display: flex;
-  justify-content: end;
+@media (max-width: 1024px) {
+  .detail-content {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  .app-introduction {
+    width: 95%;
+  }
+  .introduction-content {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+  }
+  .app-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .app-img img {
+    width: 95vw;
+    height: calc(11.8 * 95vw / 21.6);
+    max-width: 500px;
+    max-height: 273px;
+    object-fit: cover; /* 画像が歪むことなくwidthとheightのサイズにトリミング*/
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
 }
-.introduction-content {
-  width: 90%;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.introduction-content * {
-  margin: 5px 0;
-}
+
 .introduction-content p span {
   padding: 3px 10px;
   border-radius: 30px;
@@ -55,21 +100,12 @@
 #other span {
   background-color: rgba(128, 128, 128, 0.5);
 }
+.url {
+  margin-top: 20px;
+}
 .url a {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .url a:hover svg {
   fill: black;
-}
-.app-img {
-  width: 50%;
-}
-.app-img img {
-  width: 95vw;
-  height: calc(11.8 * 95vw / 21.6);
-  max-width: 500px;
-  max-height: 273px;
-  object-fit: cover; /* 画像が歪むことなくwidthとheightのサイズにトリミング*/
-  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
 }
