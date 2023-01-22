@@ -3,9 +3,9 @@
   top: 20px;
   left: 20px;
   margin: 0;
+  color: gray;
 }
 .close svg:hover {
-  cursor: pointer;
   animation-name: rotate-animation;
   animation-duration: 0.2s;
   animation-timing-function: linear; /* 一定のスピード */
@@ -32,7 +32,7 @@
     display: flex;
     justify-content: end;
   }
-  .introduction-content {
+  .app-introduction-content {
     width: 90%;
     display: flex;
     flex-flow: column;
@@ -64,7 +64,7 @@
   .app-introduction {
     width: 95%;
   }
-  .introduction-content {
+  .app-introduction-content {
     width: 100%;
     display: flex;
     flex-flow: column;
@@ -86,7 +86,7 @@
   }
 }
 
-.introduction-content p span {
+.app-introduction-content p span {
   padding: 3px 10px;
   border-radius: 30px;
   margin-right: 5px;
