@@ -1,3 +1,10 @@
+.overview {
+  margin-top: 200px;
+  text-align: center;
+  padding: 0 20px;
+  color: gray;
+  display: none;
+}
 .portfolio-content {
   width: 100%;
   position: relative;
@@ -40,13 +47,13 @@
 }
 .scroll-up-sign {
   display: block;
-  top: 60%;
+  top: 80%;
   left: 50%;
   animation-name: scroll-up-animation;
 }
 .scroll-down-sign {
   display: block;
-  top: 40%;
+  top: 80%;
   left: 50%;
   animation-name: scroll-down-animation;
 }
@@ -58,11 +65,11 @@
 }
 @keyframes scroll-up-animation {
   from {
-    top: 60%;
+    top: 80%;
     opacity: 0;
   }
   to {
-    top: 40%;
+    top: 60%;
     opacity: 0.6;
   }
 }

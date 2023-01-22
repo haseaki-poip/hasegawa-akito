@@ -9,12 +9,16 @@ type Props = {
 const PortfolioContent = memo<Props>(({ portfolioNumber }) => {
   const portfolioData = PortfolioDatas[portfolioNumber];
   return (
-    <div className="portfolio">
-      <img src={portfolioData.portfolio_img} alt="portfolioImage" />
-      <div className="portfolio-introduction">
-        <h2>{portfolioData.portfolio_name}</h2>
+    <>
+      <div className="portfolio">
+        <img src={portfolioData.portfolio_img} alt="portfolioImage" />
+        <div className="portfolio-introduction">
+          <h2>{portfolioData.portfolio_name}</h2>
+          <p>{portfolioData.portfolio_introduction}</p>
+          <button onClick={() => {}}>詳細を見る</button>
+        </div>
       </div>
-    </div>
+    </>
   );
 });
 

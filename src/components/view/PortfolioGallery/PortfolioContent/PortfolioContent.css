@@ -17,6 +17,35 @@
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
+
 .portfolio h2 {
+  text-align: center;
   color: gray;
+}
+.portfolio p {
+  margin-bottom: 30px;
+  font-size: 1.25rem;
+  width: 80vw;
+  max-width: 500px;
+  text-align: center;
+  color: gray;
+}
+@media (min-width: 764px) {
+  .portfolio p {
+    display: none;
+  }
+}
+.portfolio button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: gray;
+  opacity: 0.6;
+}
+.portfolio button:hover {
+  opacity: 0.8;
+}
+.portfolio button:active {
+  opacity: 0.6;
 }

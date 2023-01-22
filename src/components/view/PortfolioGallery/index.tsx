@@ -4,11 +4,12 @@ import PortfolioContent from "./PortfolioContent";
 import PortfolioDatas from "src/feature/portfolioData";
 import BackMoveObject from "src/components/common/BackMoveObject";
 
-const span = 1000; // ポートフォリオひとつにつきスパンは1000px
-const fadeInStart = span * 0.3;
-const fadeOutStart = span - fadeInStart;
+const span = 1300; // ポートフォリオひとつにつきスパンは1000px
+const gap = 300; // 各ポートフォリオが出現するまでの間隔
+const fadeInFinish = (span - gap) * 0.2 + gap;
+const fadeOutStart = span - (span - gap) * 0.2;
 const maxScroll = PortfolioDatas.length * span - 10;
-
+// window.scrollTo(0, 1000); // スクロール量を指定できる
 const PortfolioGallery = () => {
   const scrollPosition = useScroll();
 
@@ -18,18 +19,31 @@ const PortfolioGallery = () => {
   };
 
   const portfolioFadeStyle = (() => {
-    const scroll_in_span = scrollPosition % span;
+    const scroll_in_span = (scrollPosition % span) - gap; // 各ポートフォリオにおけるスクロール量
 
-    if (scroll_in_span <= fadeInStart) {
-      const opacity = 1 - (fadeInStart - scroll_in_span) / fadeInStart;
-      const translateY = ((fadeInStart - scroll_in_span) / fadeInStart) * 200;
+    if (scroll_in_span < 0) {
+      return {
+        opacity: "0",
+        transform: "translateY(0px)",
+      };
+    }
+
+    if (scroll_in_span <= fadeInFinish - gap) {
+      const opacity =
+        1 - (fadeInFinish - gap - scroll_in_span) / (fadeInFinish - gap);
+      const translateY =
+        ((fadeInFinish - gap - scroll_in_span) / (fadeInFinish - gap)) * 200;
       return {
         opacity: `${opacity}`,
         transform: `translateY(${translateY}px)`,
       };
-    } else if (scroll_in_span >= fadeOutStart) {
-      const opacity = 1 - (scroll_in_span - fadeOutStart) / fadeInStart;
-      const translateY = ((scroll_in_span - fadeOutStart) / fadeInStart) * 200;
+    }
+
+    if (scroll_in_span >= fadeOutStart - gap) {
+      const opacity =
+        1 - (scroll_in_span + gap - fadeOutStart) / (fadeInFinish - gap);
+      const translateY =
+        ((scroll_in_span + gap - fadeOutStart) / (fadeInFinish - gap)) * 200;
       return {
         opacity: `${opacity}`,
         transform: `translateY(${translateY}px)`,
@@ -42,6 +56,7 @@ const PortfolioGallery = () => {
     return Math.floor(scrollPosition / span); // 切り捨て
   };
 
+  // スクロールサインを上向きか下向きか非表示かのcss classを割り当て
   const scrollSignClassName = (() => {
     if (scrollPosition === 0) return "scroll-up-sign";
     if (scrollPosition > maxScroll + 100) return "scroll-down-sign";
@@ -50,6 +65,12 @@ const PortfolioGallery = () => {
 
   return (
     <div className="portfolio-content" style={portfolioContentStyle}>
+      <div
+        className="overview"
+        style={{ display: scrollPosition === 0 ? "block" : "none" }}
+      >
+        <h2>私が開発したアプリケーションの紹介ページです。</h2>
+      </div>
       <div className={"scroll-sign " + scrollSignClassName}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <g>
