@@ -2,10 +2,7 @@ import "./AppDetail.css";
 import PortfolioDatas from "src/feature/portfolioData";
 import { useSelector } from "react-redux";
 import type { RootState } from "src/redux/store";
-
-type Props = {
-  portfolioNumber: number;
-};
+import { Link } from "react-router-dom";
 
 const PortfolioDetail = () => {
   const portfolioNumber = useSelector(
@@ -13,20 +10,27 @@ const PortfolioDetail = () => {
   );
   const portfolioData = PortfolioDatas[portfolioNumber];
 
+  // react-router-domを使用してページ遷移するとスクロール量が保持される。
+  // aタグなどのリダイレクトはリセットされる。
+  window.scrollTo(0, 0); // topへスクロール
+
   return (
     <div className="portfolio-detatil">
-      <a href="/portfolio" className="close">
-        <svg
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          height="48"
-          width="48"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </a>
+      <Link to="/portfolio">
+        <div className="close">
+          <svg
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            height="48"
+            width="48"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </div>
+      </Link>
+
       <div className="detail-content">
         <div className="app-introduction">
           <div className="app-introduction-content">

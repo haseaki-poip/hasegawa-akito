@@ -3,15 +3,29 @@ import useScroll from "src/components/hooks/useScroll";
 import PortfolioContent from "./PortfolioContent";
 import PortfolioDatas from "src/feature/portfolioData";
 import BackMoveObject from "src/components/common/BackMoveObject";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "src/redux/store";
 
 const span = 1300; // ポートフォリオひとつにつきスパンは1000px
 const gap = 300; // 各ポートフォリオが出現するまでの間隔
 const fadeInFinish = (span - gap) * 0.2 + gap;
 const fadeOutStart = span - (span - gap) * 0.2;
 const maxScroll = PortfolioDatas.length * span - 10;
-// window.scrollTo(0, 1000); // スクロール量を指定できる
 const PortfolioGallery = () => {
   const scrollPosition = useScroll();
+  const portfolioNumber = useSelector(
+    (state: RootState) => state.selectPortfolio.id
+  );
+
+  // 詳細ページから戻ってきた場合、詳細ボタンを押したページの位置で表示させる
+  useEffect(() => {
+    if (portfolioNumber === -1) return;
+
+    const position = fadeOutStart + portfolioNumber * span;
+
+    window.scrollTo(0, position);
+  }, [portfolioNumber]);
 
   // ポートフォリオの数に応じてcontentの高さが変わる
   const portfolioContentStyle = {

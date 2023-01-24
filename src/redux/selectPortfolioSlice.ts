@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 export const selectPortfolioSlice = createSlice({
   name: "selectPortfolio",
   initialState: {
-    id: 0,
+    id: -1,
   },
   reducers: {
     selectPortfolio: (state, action: PayloadAction<number>) => {

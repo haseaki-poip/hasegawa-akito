@@ -7,7 +7,6 @@
   align-items: center;
   z-index: 10;
 }
-
 .portfolio img {
   width: 95vw;
   height: calc(11.8 * 95vw / 21.6);
@@ -17,9 +16,11 @@
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
+.portfolio-introduction {
+  text-align: center;
+}
 
 .portfolio h2 {
-  text-align: center;
   color: gray;
 }
 .portfolio p {
@@ -27,7 +28,6 @@
   font-size: 1.25rem;
   width: 80vw;
   max-width: 500px;
-  text-align: center;
   color: gray;
 }
 @media (min-width: 764px) {
