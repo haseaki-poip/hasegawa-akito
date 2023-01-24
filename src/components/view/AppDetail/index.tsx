@@ -1,11 +1,16 @@
 import "./AppDetail.css";
 import PortfolioDatas from "src/feature/portfolioData";
+import { useSelector } from "react-redux";
+import type { RootState } from "src/redux/store";
 
 type Props = {
   portfolioNumber: number;
 };
 
-const PortfolioDetail = ({ portfolioNumber }: Props) => {
+const PortfolioDetail = () => {
+  const portfolioNumber = useSelector(
+    (state: RootState) => state.selectPortfolio.id
+  );
   const portfolioData = PortfolioDatas[portfolioNumber];
 
   return (

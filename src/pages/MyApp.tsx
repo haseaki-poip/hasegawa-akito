@@ -5,7 +5,7 @@ const MyApp = () => {
   return (
     <div>
       <Headline headlineName="Detail" />
-      <AppDetail portfolioNumber={0} />
+      <AppDetail />
     </div>
   );
 };
