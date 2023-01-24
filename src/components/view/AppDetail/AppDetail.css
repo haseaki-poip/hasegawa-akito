@@ -1,0 +1,114 @@
+.close {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+  color: gray;
+}
+.close svg:hover {
+  animation-name: rotate-animation;
+  animation-duration: 0.2s;
+  animation-timing-function: linear; /* 一定のスピード */
+}
+@keyframes rotate-animation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.detail-content {
+  width: 100%;
+  min-height: 85vh;
+}
+
+@media (min-width: 1024px) {
+  .detail-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .app-introduction {
+    padding-right: 50px;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+  }
+  .app-introduction-content {
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .app-img {
+    width: 50%;
+  }
+  .app-img img {
+    width: 95vw;
+    height: calc(11.8 * 95vw / 21.6);
+    max-width: 500px;
+    max-height: 273px;
+    object-fit: cover; /* 画像が歪むことなくwidthとheightのサイズにトリミング*/
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
+}
+@media (max-width: 1024px) {
+  .detail-content {
+    margin-top: 100px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  .app-introduction {
+    width: 95%;
+  }
+  .app-introduction-content {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+  }
+  .app-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .app-img img {
+    width: 95vw;
+    height: calc(11.8 * 95vw / 21.6);
+    max-width: 500px;
+    max-height: 273px;
+    object-fit: cover; /* 画像が歪むことなくwidthとheightのサイズにトリミング*/
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
+}
+
+.app-introduction-content p span {
+  padding: 3px 10px;
+  border-radius: 30px;
+  margin-right: 5px;
+}
+#frontend span {
+  background-color: #fa80727b;
+}
+#backend span {
+  background-color: #00ced17b;
+}
+#other span {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.url {
+  margin-top: 20px;
+}
+.url a {
+  margin-right: 20px;
+}
+.url a:hover svg {
+  fill: black;
+}
