@@ -36,10 +36,6 @@ const Hobby = () => {
   return (
     <div id="hobby">
       <Headline headlineName="hobby" />
-      {/* <div className="background-object">
-        <div className="object" id="object1"></div>
-        <div className="object" id="object2"></div>
-      </div> */}
       <div className="hobby-gallery">
         {slideSituation.nowImgNumber !== 0 ? (
           <div className="arrow" onClick={() => rightSlide()}>
