@@ -2,12 +2,18 @@ import "./AppDetail.css";
 import PortfolioDatas from "src/feature/portfolioData";
 import { useSelector } from "react-redux";
 import type { RootState } from "src/redux/store";
-import { Link } from "react-router-dom";
+import CloseButton from "src/components/common/CloseButton";
 
 const PortfolioDetail = () => {
   const portfolioNumber = useSelector(
     (state: RootState) => state.selectPortfolio.id
   );
+
+  // reduxのstateが初期値のままの場合
+  if (portfolioNumber === -1) {
+    return <CloseButton path="/portfolio" />;
+  }
+
   const portfolioData = PortfolioDatas[portfolioNumber];
 
   // react-router-domを使用してページ遷移するとスクロール量が保持される。
@@ -16,20 +22,7 @@ const PortfolioDetail = () => {
 
   return (
     <div className="portfolio-detatil">
-      <Link to="/portfolio">
-        <div className="close">
-          <svg
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            height="48"
-            width="48"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </div>
-      </Link>
+      <CloseButton path="/portfolio" />
 
       <div className="detail-content">
         <div className="app-introduction">
