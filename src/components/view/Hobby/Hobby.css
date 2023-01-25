@@ -3,62 +3,6 @@
   overflow-x: hidden;
   position: relative;
 }
-/* 動くobject */
-.background-object {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-.background-object .object {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  position: absolute;
-  z-index: -1;
-  animation-duration: 6s;
-  animation-timing-function: linear; /* 一定のスピード */
-  animation-iteration-count: infinite; /* 無限に繰り返す */
-}
-.background-object .object:first-child {
-  animation-name: move-object1-animation;
-  top: 25px;
-  left: -100px;
-  background-color: #fa8072;
-  opacity: 0.2;
-}
-.background-object .object:last-child {
-  animation-name: move-object2-animation;
-  top: 75px;
-  right: -100px;
-  background-color: #00ced1;
-  opacity: 0.2;
-}
-@keyframes move-object1-animation {
-  0% {
-    left: -100px;
-  }
-  50% {
-    left: 100%;
-  }
-  100% {
-    left: -100px;
-  }
-}
-@keyframes move-object2-animation {
-  0% {
-    right: -100px;
-  }
-  50% {
-    right: 100%;
-  }
-  100% {
-    right: -100px;
-  }
-}
-
 /* 写真スライド */
 .hobby-gallery {
   margin-top: 100px;

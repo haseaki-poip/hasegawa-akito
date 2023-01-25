@@ -1,0 +1,14 @@
+.skill-content {
+  margin-top: 100px;
+  width: 100%;
+  overflow-x: scroll;
+}
+.skill-slide {
+  display: flex;
+  padding-bottom: 50px;
+}
+.skill {
+  margin: 0 30px;
+  text-align: center;
+  color: gray;
+}
