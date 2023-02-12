@@ -1,20 +1,28 @@
 import "./AppDetail.css";
 import PortfolioDatas from "src/feature/portfolioData";
-import { useSelector } from "react-redux";
-import type { RootState } from "src/redux/store";
+import { useDispatch } from "react-redux";
+import { selectPortfolio } from "src/redux/selectPortfolioSlice";
 import CloseButton from "src/components/common/CloseButton";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
-const PortfolioDetail = () => {
-  const portfolioNumber = useSelector(
-    (state: RootState) => state.selectPortfolio.id
-  );
-
-  // reduxのstateが初期値のままの場合
-  if (portfolioNumber === -1) {
-    return <CloseButton path="/portfolio" />;
-  }
+const AppDetail = () => {
+  const dispatch = useDispatch();
+  const portfolioNumber = Number(useParams().appId);
 
   const portfolioData = PortfolioDatas[portfolioNumber];
+
+  // useEffect内でreduxの値を更新することでレンダリング中に値を更新するのを防ぐ
+  // reduxを更新してしまうとレンダリング中に親要素の状態を変更することになり警告が出る
+  useEffect(() => {
+    dispatch(selectPortfolio(portfolioNumber));
+  }, []);
+
+  // undefindの場合
+  // portfolioNumberが文字列の場合や、番号がPortfolioDatasにない場合はundefindとなる
+  if (!portfolioData) {
+    return <CloseButton path="/portfolio" />;
+  }
 
   // react-router-domを使用してページ遷移するとスクロール量が保持される。
   // aタグなどのリダイレクトはリセットされる。
@@ -82,4 +90,4 @@ const PortfolioDetail = () => {
   );
 };
 
-export default PortfolioDetail;
+export default AppDetail;
