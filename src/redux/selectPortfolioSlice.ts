@@ -7,7 +7,7 @@ export const selectPortfolioSlice = createSlice({
   },
   reducers: {
     selectPortfolio: (state, action: PayloadAction<number>) => {
-      state.id = action.payload;
+      state.id = isNaN(action.payload) ? -1 : action.payload;
     },
   },
 });

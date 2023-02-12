@@ -2,8 +2,6 @@ import "./PortfolioContent.css";
 import PortfolioDatas from "src/feature/portfolioData";
 import { memo } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { selectPortfolio } from "src/redux/selectPortfolioSlice";
 
 type Props = {
   portfolioNumber: number;
@@ -11,13 +9,7 @@ type Props = {
 
 const PortfolioContent = memo<Props>(({ portfolioNumber }) => {
   const portfolioData = PortfolioDatas[portfolioNumber];
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const showDetail = () => {
-    dispatch(selectPortfolio(portfolioNumber));
-    navigate("/myApp/" + portfolioNumber);
-  };
 
   return (
     <>
@@ -26,7 +18,9 @@ const PortfolioContent = memo<Props>(({ portfolioNumber }) => {
         <div className="portfolio-introduction">
           <h2>{portfolioData.portfolio_name}</h2>
           <p>{portfolioData.portfolio_introduction}</p>
-          <button onClick={() => showDetail()}>詳細を見る</button>
+          <button onClick={() => navigate("/myApp/" + portfolioNumber)}>
+            詳細を見る
+          </button>
         </div>
       </div>
     </>

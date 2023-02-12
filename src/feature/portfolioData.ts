@@ -1,6 +1,7 @@
 import ESintImg from "src/assets/images/E-SInt.png";
 import DealerImg from "src/assets/images/Dealer.png";
 import VotingSiteImg from "src/assets/images/votiong-site.png";
+import EatOkashiImg from "src/assets/images/EatOkashi.png";
 
 const PortfolioDatas = [
   {
@@ -45,6 +46,20 @@ const PortfolioDatas = [
     Other: "Firebase",
     appUrl: "https://voting-site-76b5a.web.app/",
     githubUrl: "https://github.com/Hasegawa-Akito/voting-ts-react",
+  },
+  {
+    id: 3,
+    portfolio_name: "Eatお菓子",
+    portfolio_introduction:
+      "たくさんのお菓子と出会えるお菓子なマッチングアプリです。",
+    sub__introduction:
+      "暇な時間にアプリで無作為に探すことで思わぬお菓子との出会いをすることができます。",
+    portfolio_img: EatOkashiImg,
+    frontend: "SwiftUI",
+    backend: "not using",
+    Other: "お菓子の虜api",
+    appUrl: "https://youtu.be/O38z5bRIem0",
+    githubUrl: "https://github.com/haseaki-poip/snack-matching",
   },
 ];
 
