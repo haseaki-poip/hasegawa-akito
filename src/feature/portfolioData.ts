@@ -2,6 +2,7 @@ import ESintImg from "src/assets/images/E-SInt.png";
 import DealerImg from "src/assets/images/Dealer.png";
 import VotingSiteImg from "src/assets/images/votiong-site.png";
 import EatOkashiImg from "src/assets/images/EatOkashi.png";
+import McoImg from "src/assets/images/mco.png";
 
 const PortfolioDatas = [
   {
@@ -34,7 +35,21 @@ const PortfolioDatas = [
       "https://github.com/tokyo-azisai-paradise/poker-mahjong-calculation",
   },
   {
-    id: 2,
+    id: 4,
+    portfolio_name: "Muscle-Cut-Out",
+    portfolio_introduction:
+      "自分の上裸の画像からお腹をピックアップして切り取るwebアプリです。",
+    sub__introduction:
+      "鏡などに写った自分の写真からお腹に着目して、自動でその部分をトリミングするアプリを作りました",
+    portfolio_img: McoImg,
+    frontend: "TypeScript, React, TensorFlow.js, TailWind",
+    backend: "not using",
+    Other: "Vercel",
+    appUrl: "https://muscle-cut-out.vercel.app/",
+    githubUrl: "https://github.com/haseaki-poip/muscle-CutOut",
+  },
+  {
+    id: 3,
     portfolio_name: "voting-site",
     portfolio_introduction:
       "アンケート作成とその結果をリアルタイムで反映できるwebアプリです。",
@@ -48,7 +63,7 @@ const PortfolioDatas = [
     githubUrl: "https://github.com/Hasegawa-Akito/voting-ts-react",
   },
   {
-    id: 3,
+    id: 4,
     portfolio_name: "Eatお菓子",
     portfolio_introduction:
       "たくさんのお菓子と出会えるお菓子なマッチングアプリです。",
